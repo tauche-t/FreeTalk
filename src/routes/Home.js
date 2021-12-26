@@ -4,6 +4,8 @@ import Chat from "../components/Chat";
 import { auth, db } from "../fbase";
 import { ChatArea, ChatBtn, ChatForm, ChatInput, HomeBox, HomeWrap, User } from "../styles/HomeStyle";
 import { BiRightArrowAlt } from 'react-icons/bi';
+import { MdLogout } from 'react-icons/md';
+import gravatar from "gravatar/lib/gravatar";
 
 const Home = ({ userObj }) => {
   const [chat, setChat] = useState("");
@@ -26,6 +28,10 @@ const Home = ({ userObj }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
 
+    if(chat === "") {
+      return;
+    }
+
     await addDoc((collection(db, "chats")), {
       text: chat,
       username: userObj.displayName,
@@ -44,11 +50,13 @@ const Home = ({ userObj }) => {
     <HomeWrap>
       <HomeBox>
         <User>
-          <div>{userObj.displayName}</div>
-          <button onClick={onLogOutClick}>Log Out</button>
+          {/* <div className="profile"></div> */}
+          <img src={gravatar.url(userObj.displayName, { s: '28px', d: 'mp' })} alt="" />
+          <div class="userProfile">{userObj.displayName}</div>
+          <button onClick={onLogOutClick}><MdLogout /></button>
         </User>
         <ChatArea>
-        <ul>
+          <ul>
             {chats.map((chat) => (
               <Chat key={chat.id} chatObj={chat} isOwner={chat.createId === userObj.uid} />
             ))}

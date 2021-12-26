@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'NanumGothic';
 }
 
 input {
@@ -21,4 +22,30 @@ a {
 
 form {
   width: 100%;
+}
+
+@font-face {
+  font-family: 'NanumGothic';
+  src: url('../src/font/NanumGothic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NanumGothic';
+  src: url('../src/font/NanumGothicBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'NanumGothic';
+  src: url('../src/font/NanumGothicExtraBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ONE_Mobile_POP';
+  src: url('../src/font/ONE_Mobile_POP.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

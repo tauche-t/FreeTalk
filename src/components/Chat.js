@@ -1,5 +1,6 @@
 import { deleteDoc, doc } from "firebase/firestore";
 import { deleteObject, ref } from "firebase/storage";
+import gravatar from "gravatar/lib/gravatar";
 import { db, storageService } from "../fbase";
 import { Chating, ChatWrap, UserProfile } from "../styles/HomeStyle";
 
@@ -17,7 +18,8 @@ const Chat = ({ chatObj, isOwner }) => {
     <li>
       <ChatWrap>
         <UserProfile>
-          <div className="photo"></div>
+          {/* <div className="photo"></div> */}
+          <img src={gravatar.url(chatObj.displayName, { s: '28px', d: 'mp' })} alt="" />
           <h3>{chatObj.username}</h3>
         </UserProfile>
         <Chating>

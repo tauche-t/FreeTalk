@@ -1,29 +1,64 @@
 import styled from "styled-components";
 
 export const HomeWrap = styled.div`
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 export const HomeBox = styled.div`
+  height: 100%;
   position: relative;
   width: 520px;
   height: 800px;
-  border: 1px solid #000;
+  margin-top: 20px;
 `;
 
 export const User = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid #dcdcdc;
+  margin-bottom: 10px;
+
+  .profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: tomato;
+  }
+
+  button {
+    border: 0;
+    outline: 0;
+    background: none;
+    font-size: 18px;
+  }
+
+  .userProfile {
+    font-family: 'ONE_Mobile_POP';
+    color: #495057;
+  }
 `;
 
 export const ChatArea = styled.div`
   height: 700px;
   overflow-y: scroll;
-  border: 1px solid #000;
+  padding: 15px 30px 15px 15px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #e8e8e8;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #fff;
+    border-radius: 10px;
+  }
+;
 `;
 
 export const ChatForm = styled.div`
@@ -64,6 +99,7 @@ export const ChatBtn = styled.button`
 
 
 export const UserProfile = styled.div`
+  margin-right: 20px;
 
   .photo {
     width: 70px;
@@ -74,6 +110,8 @@ export const UserProfile = styled.div`
 
   h3 {
     text-align: center;
+    font-family: 'ONE_Mobile_POP';
+    color: #495057;
   }
 `;
 
@@ -100,4 +138,5 @@ export const Chating = styled.div`
 
 export const ChatWrap = styled.div`
   display: flex;
+  margin-bottom: 20px;
 `;
