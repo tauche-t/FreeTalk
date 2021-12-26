@@ -12,7 +12,7 @@ const AppRouter = ({ isLoggedIn, userObj }) => {
         ) : (
           <>
             <Route path="/" element={ <LogIn /> } />
-            <Route path="SignUp" element={ <SignUp /> } />
+            <Route path="SignUp" element={ <SignUp userObj={userObj} /> } />
           </>
         )}
       </Routes>

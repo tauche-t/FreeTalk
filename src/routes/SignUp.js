@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { Input, SignWrap } from "../styles/SignStyle";
 import { auth } from "../fbase";
 
-const SignUp = () => {
+const SignUp = ({ userObj }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -34,9 +34,9 @@ const SignUp = () => {
     } catch(error) {
       setError(error.message);
     }
+    
 
     await updateProfile(auth.currentUser, {displayName: name});
-
   }
 
   return (
